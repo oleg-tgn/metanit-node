@@ -1,12 +1,8 @@
 var http = require('http');
-var os = require('os');
-var greeting = require('./greeting');
+var User = require('./user');
 
-
-var userName = os.userInfo().username;
-
-console.log(`Дата запроса: ${greeting.date}`);
-console.log(greeting.getMessage(userName));
+var oleg = new User("Oleg", 24);
+oleg.sayHi();
 
 
 http.createServer(function(request, response) {
